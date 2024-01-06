@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create_Record</title>
+    <style>
+        #one:hover,select:hover
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <center>
+    <h1>Creation of Record</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table cellspacing="10px" cellpadding="10px">
+            <tr>
+                <td><label for="na">Name</label></td>
+                <td><select name="na" id="na">
+
+                    {% for wp in webpage %}
+                        <option value="{{wp.name}}">{{wp.name}}</option>
+                    {% endfor %}
+
+                </select></td>
+            </tr>
+
+            <tr>
+                <td><label for="da">Date</label></td>
+                <td><input type="YYYY-MM-DD" name="da" id="da"></td>
+            </tr>
+
+            <tr>
+                <td><label for="ar">Author</label></td>
+                <td><input type="text" name="ar" id="ar"></td>
+            </tr>
+
+
+        </table>
+            <tr>
+                <input type="submit" id="one" value="Create_Record">
+            </tr>
+    </form>
+   </center> 
+</body>
+</html>

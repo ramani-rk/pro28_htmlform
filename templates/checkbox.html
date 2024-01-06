@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+    <style>
+        input:hover
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>checkbox</h1>
+        <form method="POST" action="{% url 'select_multiple_webpage' %}">
+            {% csrf_token %}
+
+            <h3>Choose Below Option</h3><br>
+
+            {% for to in topics %}
+
+                <label for="tn">{{to.topic_name}}</label>
+                <input type="checkbox" name="tn" id="tn" value="{{to.topic_name}}">
+                <br> <br>
+
+            {% endfor %}
+
+            <input type="submit" value="checkbox">
+        </form>
+        
+
+    </center>
+</body>
+</html>

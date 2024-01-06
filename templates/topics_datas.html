@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics_Datas_Display</title>
+    <style>
+        table
+        {
+            border-collapse: collapse;
+            text-align: center;
+            width: 150px;
+        }
+        th
+        {
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>TOPICS</h1>
+        <table border="3px" cellpadding="5px" cellspacing="5px">
+            <tr>
+                <th>TOPIC NAME</th>
+            </tr>
+            {% for da in topics %}
+                <tr>
+                    <td>{{da.topic_name}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

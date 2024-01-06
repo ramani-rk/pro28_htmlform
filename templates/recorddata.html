@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record_Data_Display</title>
+    <style>
+        table
+        {
+            border-collapse: collapse;
+            text-align: center;
+            width: 400px;
+        }
+        th
+        {
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Access Record Collections</h1>
+        <table border="3px" cellpadding="5px" cellspacing="5px">
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Author</th>
+            </tr>
+            {% for ar in accessrecord %}
+                <tr>
+                    <td>{{ar.name}}</td>
+                    <td>{{ar.date}}</td>
+                    <td>{{ar.author}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create_Webpages</title>
+    <style>
+        #one:hover,select:hover
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <center>
+    <h1>Creation of Webpages</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table cellspacing="10px" cellpadding="10px">
+            <tr>
+                <td><label for="tn">Topic Name</label></td>
+                <td><select name="tn" id="tn">
+
+                    {% for to in topics %}
+                        <option value="{{to.topic_name}}">{{to.topic_name}}</option>
+                    {% endfor %}
+
+                </select></td>
+            </tr>
+
+            <tr>
+                <td><label for="na">Name</label></td>
+                <td><input type="text" name="na" id="na"></td>
+            </tr>
+
+            <tr>
+                <td><label for="ur">URL</label></td>
+                <td><input type="text" name="ur" id="ur"></td>
+            </tr>
+
+            <tr>
+                <td><label for="em">Email</label></td>
+                <td><input type="mail" name="em" id="em"></td>
+            </tr>
+
+        </table>
+            <tr>
+                <input type="submit" id="one" value="Create_Webpage">
+            </tr>
+    </form>
+   </center> 
+</body>
+</html>
